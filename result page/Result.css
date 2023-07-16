@@ -169,6 +169,16 @@ border-radius: 10px;
   padding: 5px;
 }
 
+.medals img{
+  width: 40px;
+  position: absolute;
+  z-index: 1;
+  background-image: none;
+  /* background: red; */
+  margin-top: 8px;
+  margin-left: 105px;
+}
+
 
 
 
@@ -305,7 +315,7 @@ border-radius: 10px;
  */
 
  .award-ribbontwo {
-  font-family: Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
   position: relative;
   margin: 25px auto 75px;
   height: 152px;
