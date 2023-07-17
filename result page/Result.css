@@ -106,7 +106,7 @@ body{
   background: #293B5F;
   color: white;
   border: 2px solid #66FCF1;
-  font-size:larger;
+  font-size: larger;
   font-weight:bold;
 }
 
@@ -132,7 +132,7 @@ body{
 }
 .first{
   content:none;
-  
+
   height:100px;
   
 }
@@ -167,16 +167,6 @@ border-radius: 10px;
   border-radius: 70px;
   background: #172137;
   padding: 5px;
-}
-
-.medals img{
-  width: 40px;
-  position: absolute;
-  z-index: 1;
-  background-image: none;
-  /* background: red; */
-  margin-top: 8px;
-  margin-left: 105px;
 }
 
 
@@ -257,7 +247,7 @@ border-radius: 10px;
   color: #ffffff;
   font-size: 1.2em;
   line-height: 1;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5);
 }
