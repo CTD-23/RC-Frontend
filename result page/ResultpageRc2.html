@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="ResultpageRc2.css">
+     <!-- Include Bootstrap and Tailwind CSS libraries -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css"/>
+    <title>Document</title>
+</head>
+<body class="Body">
+    <div class="Navbar2">
+      <nav class="navbar navbar-expand-lg navbarr">
+        <div class="container-fluid">
+          <a class="navbar-brand navvi" href="https://credenz.in" style="padding: 0px"
+            ><img src="images/revb.png" alt="Clash Logo" height="60px" width="70px"
+          /></a>
+          <a class="navbar-brand navvi timer" href="#" style="margin-left: 20px"
+            >TIMER
+          </a>
+  
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars" style="color: white"></i>
+          </button>
+          <div
+            class="collapse navbar-collapse stroke"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active navvi"
+                  aria-current="page"
+                  href="./questionHubPage.html"
+                  style="margin-left: 10px; margin-right: 10px"
+                  >Question Hub</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link navvi"
+                  aria-current="page"
+                  href="./submissions.html"
+                  style="margin-left: 10px; margin-right: 10px"
+                  >Submissions</a
+                >
+              </li>
+  
+              <li class="nav-item navvi">
+                <a
+                  class="nav-link navvi"
+                  style="margin-left: 10px; margin-right: 10px; cursor: pointer"
+                  data-bs-toggle="modal"
+                  data-bs-target="#LogoutModal"
+                  >Logout</a
+                >
+  
+                <!-- <button type="button" class="btn btn-primary">
+                  Launch demo modal
+                </button> -->
+  
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="LogoutModal"
+                  tabindex="-1"
+                  aria-labelledby="LogoutModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="LogoutModalLabel">Alert!</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body text-center">
+                        Are you sure you want to logout ?
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancel
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                          Logout
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <a
+            class="navbar-brand navvi pisblogo"
+            href="https://pictieee.in"
+            style="padding: 0px; margin-left: 20px"
+            ><img src="images/pisblogo.png" alt="Clash Logo" height="30px"
+          /></a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="contain">
+       <div class="result">
+        <h1 class="resulttitle">Your Results</h1>
+          <div class="user_profile">
+              <div class="profile">
+                <div class="profilepic">
+                  A
+                </div>
+                <p class="name">Name</p>
+              </div>
+
+              <div class="score">
+                <!-- <p class="scoreitem">Rank : 5</p>
+                <p class="scoreitem">Score: 10/10</p> -->
+                <table class="tbles">
+                  <thead>
+                    <th>
+                      Rank
+                    </th>
+                    <th>
+                      Score
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        5
+                      </td>
+                      <td>
+                        10/10
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="tbles">
+                  <thead>
+                    <th>
+                      Questions <br>
+                      Attempted
+                    </th>
+                    <th>
+                      Questions </br>
+                      Asked
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        7
+                      </td>
+                      <td>
+                        7
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- <p class="scoreitem">Questions Attempted: 7</p>
+                <p class="scoreitem">Questions Asked: 7</p> -->
+              </div>
+          </div>
+          <!-- <div class="statistics">
+                     
+          </div>   -->
+       </div>
+       <div class="leaderboard">
+
+             <div class="leaderhead">
+              <h1>WINNERS</h1>
+             </div>       
+             <div class="top3">
+                  <div class="card1" id="card1">
+                    <div class="circle">
+                       <h2 class="place">2 </h2>
+                    </div>
+                    <div class="content">
+                      
+                      <p>2nd</p>
+                      <p>Alice</p>
+                      <p>Score: 99/100</p>
+                    </div>
+                  </div>
+
+                  <div class="card1" id="card2">
+                    <div class="circle">
+                      
+                        <h2 class="place">1</h2>
+                    </div>
+                    <div class="content">
+                       <p>1st</p>
+                       <p>Alice</p>
+                       <p>Score: 100/100</p>
+                    </div>
+                  </div>
+
+                  <div class="card1" id="card3">
+                    <div class="circle">
+                        <h2 class="place">3</h2>
+                    </div>
+                    <div class="content">
+                      <p>3rd</p>
+                      <p>Alice</p>
+                      <p>Score: 98/100</p>
+                    </div>
+                  </div>
+             </div>
+             <div class="top6">
+                <div class="tble">
+                    <table class="leader-table table table-hover" id="myTable" bgcolor = "#2E363B">
+                      <thead>
+                        <tr class="headers" bgcolor="#13303E">
+                          <th scope="col" class="userb">Rank</th>
+                          <th scope="col" class="userb">Name</th>
+                          <th scope="col" class="userb">Score</th>
+                          <th scope="col" class="userb">Attempts</th>
+                          <th scope="col" class="userb">Time</th>
+                        </tr>
+                      </thead>
+                      <tbody id="myTable">
+                        <tr class="usera">
+                          <td scope="row">4th</td>
+                          <td>Ted</td>
+                          <td>85</td>
+                          <td>9/10</td>
+                          <td>0:18:00</td>  
+                        </tr>        
+                        <tr class="usera">
+                          <td scope="row">5th</td>
+                          <td>Michael</td>
+                          <td>81</td>
+                          <td>9/10</td>
+                          <td>0:20:00</td>          
+                        </tr>
+                        <tr class="usera">
+                          <td scope="row">6th</td>
+                          <td>Joey</td>
+                          <td>79</td>
+                          <td>9/10</td>
+                          <td>0:20:50</td>          
+                        </tr>
+                        <tr >
+
+                       </tbody>
+                    </table>
+                </div>
+             </div>
+       </div> 
+    </div>
+
+                                                                        
+
+    <div class="clear"></div>
+    <footer class="text-center footerr">
+      <div class="container-fluid">
+        <div class="footer-text pt-3 pb-3">PISB <span>&copy</span></div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+
+    <script>
+        const startingMinutes = 10;
+        let time = startingMinutes * 60;
+    
+        const countdown = document.getElementById('countdown');
+        function updateCountdown(){
+            var minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('countdown').innerHTML = "0:"+ minutes + ":" +seconds; 
+            time--;
+        }
+    
+        setInterval(updateCountdown,1000);
+    </script>
+      <!-- Include Bootstrap and jQuery libraries -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

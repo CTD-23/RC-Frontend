@@ -155,7 +155,9 @@ border-radius: 10px;
   width: 100%;
   justify-content: center;
   align-items: center;
+  
 }
+
 
 .toppers {
   /* font-weight: bold; */
@@ -202,20 +204,22 @@ border-radius: 10px;
 
   /* background color/gradient/whatever */
  
-  background: -moz-linear-gradient(45deg,#f9ca24 29%, #e9d46f 46%,#f7e485 62%,#f3c41b  96%);
-  background: -webkit-linear-gradient(45deg, #f9ca24 29%,#e9d46f 46%, #f7e485 62%, #f3c41b  96%);
-  background: linear-gradient(45deg, #f9ca24  29%, #e9d46f 46%, #f7e485 62%, #f3c41b 96%);
+  background: #27ae60;
+  background: -moz-linear-gradient(45deg, #95a5a6 19%, #95a5a6 36%,#c8cdce 52%,#95a5a6  96%);
+  background: -webkit-linear-gradient(45deg, #95a5a6 19%, #95a5a6 36%, #c8cdce 52%, #95a5a6 96%);
+  background: linear-gradient(45deg, #95a5a6 19%, #95a5a6 36%, #c8cdce 52%,#95a5a6 96%);
 
   /* adding dimension */
-  -webkit-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #ffaf40 , 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
-  -moz-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #ffaf40, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #ffaf40, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #7f8c8d, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #7f8c8d, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #7f8c8d, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
 }
 .box {
   /* border-radius: 10px; */
   color: #cdf5ff;
   /* background-image: linear-gradient(201deg, #05494d -23%, #12100e 130%); */
-  background: #021516;
+  /* background: #021516; */
+  background-image: linear-gradient(300deg, #6653fe -50%, #0c111b 30%, #6a31e6 280%);
   /* box-shadow: 2px 2px 5px 2px rgba(122, 206, 86, 0.911),-2px -2px 5px 2px rgba(122, 206, 86, 0.911); */
 }
 .down_bor2 {
@@ -244,10 +248,11 @@ border-radius: 10px;
   box-sizing: border-box;
   
   /* text styling */
-  color: #ffffff;
-  font-size: 1.2em;
+  /* color: #ffffff; */
+  color: #021516;
+  font-size: 1em;
   line-height: 1;
-  /* font-weight: bold; */
+  font-weight: bold;
   text-align: center;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -277,7 +282,8 @@ border-radius: 10px;
 .award-ribbonone:before {
   top: 45px;
   left: 15px;
-  border-color: transparent #ff9f1a transparent #ff9f1a;
+  border-color: transparent #95a5a6 transparent #95a5a6;
+  /* border-color: transparent darkred transparent darkred; */
   border-width: 0px 60px 35px;
   border-style: solid;
 }
@@ -290,7 +296,9 @@ border-radius: 10px;
 .award-ribbonone:after {
   top: 30px;
   left: 25px;
-  border-color: transparent #ffc048 transparent #ffc048 ;
+  
+  border-color: transparent#bdc3c7 transparent #bdc3c7;
+  /* border-color: transparent red transparent red; */
   border-width: 0px 50px 30px;
   border-style: solid;
 }
@@ -327,15 +335,18 @@ border-radius: 10px;
   box-sizing: border-box;
 
   /* background color/gradient/whatever */
-  background: #27ae60;
-  background: -moz-linear-gradient(45deg, #95a5a6 19%, #95a5a6 36%,#c8cdce 52%,#95a5a6  96%);
-  background: -webkit-linear-gradient(45deg, #95a5a6 19%, #95a5a6 36%, #c8cdce 52%, #95a5a6 96%);
-  background: linear-gradient(45deg, #95a5a6 19%, #95a5a6 36%, #c8cdce 52%,#95a5a6 96%);
+  
+
+  background: -moz-linear-gradient(45deg,#f9ca24 29%, #e9d46f 46%,#f7e485 62%,#f3c41b  96%);
+  background: -webkit-linear-gradient(45deg, #f9ca24 29%,#e9d46f 46%, #f7e485 62%, #f3c41b  96%);
+  background: linear-gradient(45deg, #f9ca24  29%, #e9d46f 46%, #f7e485 62%, #f3c41b 96%);
 
   /* adding dimension */
-  -webkit-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #7f8c8d, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
-  -moz-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #7f8c8d, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #7f8c8d, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
+  
+
+  -webkit-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #ffaf40 , 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #ffaf40, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.2), 0px 0px 0px 10px #ffaf40, 0px 10px 30px 0px rgba(0, 0, 0, 0.9);
 }
 
 /*
@@ -361,8 +372,9 @@ border-radius: 10px;
   box-sizing: border-box;
   
   /* text styling */
-  color: #ffffff;
-  font-size: 1.2em;
+  /* color: #ffffff; */
+  color: #021516;
+  font-size: 1.1em;
   line-height: 1;
   font-weight: bold;
   text-align: center;
@@ -384,6 +396,8 @@ border-radius: 10px;
   z-index: -1;
   /* length of the ribbon */
   padding-top: 160px;
+  /* margin-top: 140px; */
+  /* margin-left: 40px; */
 }
 
 
@@ -394,7 +408,10 @@ border-radius: 10px;
 .award-ribbontwo:before {
   top: 45px;
   left: 15px;
-  border-color: transparent #95a5a6 transparent #95a5a6;
+  
+  border-color: transparent #ff9f1a transparent #ff9f1a;
+  /* border-color: transparent darkred transparent darkred; */
+  /* border-color: transparent; */
   border-width: 0px 60px 35px;
   border-style: solid;
 }
@@ -407,7 +424,9 @@ border-radius: 10px;
 .award-ribbontwo:after {
   top: 30px;
   left: 25px;
-  border-color: transparent#bdc3c7 transparent #bdc3c7;
+  border-color: transparent #ffc048 transparent #ffc048;
+  /* border-color: transparent red transparent red; */
+  /* border-color: transparent; */
   border-width: 0px 50px 30px;
   border-style: solid;
 }
@@ -422,7 +441,7 @@ border-radius: 10px;
  */
 
  .award-ribbonthree {
-  font-family: Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
   position: relative;
   margin: 25px auto 75px;
   height: 152px;
@@ -479,7 +498,7 @@ border-radius: 10px;
   
   /* text styling */
   color: #ffffff;
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1;
   font-weight: bold;
   text-align: center;
@@ -511,7 +530,9 @@ border-radius: 10px;
 .award-ribbonthree:before {
   top: 45px;
   left: 15px;
+  /* border-color: transparent darkred transparent darkred; */
   border-color: transparent #d66e5c transparent #d66e5c;
+
   border-width: 0px 60px 35px;
   border-style: solid;
 }
@@ -525,6 +546,7 @@ border-radius: 10px;
   top: 30px;
   left: 25px;
   border-color: transparent #eb8166 transparent #eb8166;
+  /* border-color: transparent red transparent red; */
   border-width: 0px 50px 30px;
   border-style: solid;
 }
@@ -533,4 +555,5 @@ border-radius: 10px;
 }
 .row{
   width: -webkit-fill-available;
+  
 }
