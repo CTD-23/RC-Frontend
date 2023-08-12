@@ -1,0 +1,80 @@
+import React, { useState } from 'react';
+import './instructs.css';
+function Instruct() {
+  const [termsChecked, setTermsChecked] = useState(false);
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const instructions = [
+    "The following coding competition can be played in three languages.",
+    "These rounds consist of 6 questions of increasing marks in order. For the first right submission, the first participant to submit will receive full marks. For the next right submissions, following participants will receive total-1, total-2, and so on marks.",
+    "The following contest will consist of two text boxes - a] Input textbox b] Output textbox. Participants are expected to put custom input in the textbox and the corresponding output will be generated.",
+    "Based on the output generated upon customized inputs provided, find the relation and code it accordingly in the editor provided on the page.",
+    "To run the code and check for semantics, press the run button.",
+    "To check Testcases passed and to do the submission of the code, press the Submit button.",
+    "Once pressed on the run button, you can authenticate the code in the custom input textbox and check the corresponding output to verify the validity of the code.",
+    "After every submission, the leaderboard will be updated. Users can check their rank on the leaderboard page.",
+    "Submissions done can be viewed on the submission page of the website."
+  ];
+
+  const handleTermsChange = () => {
+    setTermsChecked(!termsChecked);
+    setIsButtonEnabled(!isButtonEnabled);
+}
+
+
+  return (
+    <div className="container">
+      <div className="row align">
+        <div className="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div className="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+          <div className="heading instr">
+            <h3 className="title">INSTRUCTIONS</h3>
+          </div>
+          <div className="scrollon" id="style-8">
+            {instructions.map((instruction, index) => (
+              <div className="outerbox" key={index}>
+                <div className="infobox">{instruction}</div>
+                <div className={`numbox ${index + 1}`}>{String(index + 1).padStart(2, '0')}</div>
+              </div>
+            ))}
+          </div>
+          <div>
+            <form action="" method="post">
+              <div className="form-check checkboxouter">
+                <input
+                  className="form-check-input checkbox"
+                  type="checkbox"
+                  value="checked"
+                  id="flexCheckDefault"
+                  name="checked"
+                  checked={termsChecked}
+                  onChange={handleTermsChange}
+                  
+                  required
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                  I have read all the instructions carefully.
+                </label>
+              </div>
+              <div className="buttonboxouter" >
+                <button 
+                  type="submit"
+                  // className={termsChecked ? 'enabled' : 'disabled'}
+                  className={termsChecked? 'button':'proceed'}
+              
+                  id="submit_button"
+                  name="submitbutton"
+                  disabled={!isButtonEnabled} 
+                >
+                  Proceed
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+      </div>
+    </div>
+  );
+}
+
+export default Instruct;
