@@ -33,6 +33,9 @@ footer {
 
 .badadiv {
     display: flex;
+    /* overflow-y: scroll; */
+    width: 100%;
+    /* height: 50%; */
     margin: auto 20px;
     flex-wrap: wrap;
     grid-gap: 40px;
@@ -45,7 +48,7 @@ footer {
 .question-table{
     border-spacing: 0px 15px;
     border-collapse:separate;
-    
+    height: 100%;
     margin: 0px 5% 0px 5%;
     width: fit-content;
     color: #ffffff;

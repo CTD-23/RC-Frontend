@@ -3,6 +3,8 @@ import './quescards.css'; // Import your custom CSS
 import { Link } from 'react-router-dom'
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
+import { BsCheck2Circle } from 'react-icons/bs';
+
 
 const endPoint = "/api/questions/"
 
@@ -36,6 +38,13 @@ const [Qdata, setQdata] = useState(tasks);
   },[]);
 
 
+  const buttonStyle = {
+    backgroundColor: Qdata.solvedByTeam ? 'green' : '#0e0758', // Change colors as needed
+    color: 'white', // Text color
+    // Add other styles you want to apply
+  };
+
+
 
   const rows = Qdata.map(task => (
     <div className="card" key={task.questionId}>
@@ -43,7 +52,7 @@ const [Qdata, setQdata] = useState(tasks);
       <div className="thwala" id="progress">
         <div className="progress" style={{ height: '25px' }}>
           <div
-            className="progress-bar"
+            className="progress-bar progress-bar-striped progress-bar-animated"
             role="progressbar"
             style={{ width: `${task.accuracy}%` }}
             aria-valuenow={task.accuracy}
@@ -55,20 +64,26 @@ const [Qdata, setQdata] = useState(tasks);
         </div>
       </div>
       <div className="thwala">
+      
         <button
           type="button"
-          className="btn btn-primary btn-sm"
+          // className="btn btn-primary btn-sm"
+          className={`btn btn-primary btn-sm `}
           data-bs-toggle="modal"
           data-bs-target="#myModal"
         >
           {/* <a href={task.questionId}>SOLVE</a> */}
-          <Link to={`/question/${task.questionId}`}>SOLVE</Link>
+          <Link to={`/question/${task.questionId}`}> {task.solvedByTeam ? "SOLVED" : "SOLVE"} </Link> 
+          <span> {task.solvedByTeam ? <BsCheck2Circle/>  : ""} </span>
+          
         </button>
+        
+      
       </div>
     </div>
   ));
 
-
+ 
   
 
   return (
@@ -76,7 +91,7 @@ const [Qdata, setQdata] = useState(tasks);
       {/* ...Navbar and other components */}
       <div className="backgr">
       <div className="Heading">
-        <h2>Question Hub</h2>
+        <h2>Questions</h2>
       </div>
       
         <table className="question-table table table-responsive-sm">

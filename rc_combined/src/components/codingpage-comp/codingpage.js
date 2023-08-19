@@ -20,11 +20,17 @@ export default function Codingpage() {
   const [ConsoleMenuOpen, setConsoleMenuOpen] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [Emoji, setEmoji] = useState(false);
-
-
+  const [QuesData,setQuesData] = useState([]);
+  const [ExecutedData,setExecutedData] = useState([]);
+  const [ExecutedChangedData, setExecutedChangedData] = useState(null);
+  
+  
+  const [isSubmit, setisSubmit] = useState(false);
+  const [sampleInput, setsampleInput] = useState("");
   const [code, setCode] = useState('');
   const [theme, setTheme] = useState("cobalt");
   const [language, setLanguage] = useState(languageOptions[0]);
+  const [textFieldValue, setTextFieldValue] = useState('');   //to take input from user
   
   const { questionId } = useParams();
   const endPoint = `/api/questions/${questionId}/`;
@@ -34,10 +40,16 @@ export default function Codingpage() {
      setConsoleMenuOpen(!ConsoleMenuOpen);
      setEmoji(!Emoji);
   }
+  const handleDataChange = () => {
+    setExecutedData(ExecutedData);
+  };
+ 
+
+  const handleTextFieldChange = (newValue) => {
+    setTextFieldValue(newValue);
+  };
 
 
-
-  const [QuesData,setQuesData] = useState([]);
   useEffect(()=>{
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
@@ -52,6 +64,10 @@ export default function Codingpage() {
                     
                     
                     setQuesData(data);
+                    setsampleInput(data.sampleIp)
+                    setTextFieldValue(data.sampleIp)
+                    console.log("dfsd",data.sampleIp)
+                    setLanguage("cpp");
 
                     console.log("data ",typeof(QuesData));
                     console.log(QuesData);
@@ -74,6 +90,7 @@ export default function Codingpage() {
 
   
   const handleSubmit = async (val) => {
+    setisSubmit(val);
     setConsoleMenuOpen(!ConsoleMenuOpen);
     {ConsoleMenuOpen ?  setConsoleMenuOpen(ConsoleMenuOpen) : setConsoleMenuOpen(!ConsoleMenuOpen)}
     setIsButtonEnabled(true);
@@ -82,8 +99,8 @@ export default function Codingpage() {
   
       'question':`${questionId}`,
       'code':`${code}`,
-      'language': "cpp",
-      'input': " hh ",
+      'language': `${language}`,
+      'input': `${textFieldValue}`,
       'isSubmitted': `${val}`
     }
     
@@ -96,7 +113,7 @@ export default function Codingpage() {
                     console.log("enter in then if ");
                    var  data = response.data;
                     console.log(data.input);
-                    
+                    setExecutedData(data);
                     // console.log(typeof(data));
                     // console.log(typeof(jdata));
                     // console.log(Object.values(jdata));
@@ -145,7 +162,7 @@ export default function Codingpage() {
 
   const onSelectChange = (sl) => {
     console.log("selected Option...", sl);
-    setLanguage(sl);
+    setLanguage(sl.name);
   };
 
   const onChangenew = (action,data) => {
@@ -226,7 +243,7 @@ export default function Codingpage() {
                                 
                             //     className=""
                             // >
-                                <Consolecontent onClick={toggleModal}  />
+                                <Consolecontent onClick={toggleModal} data={ExecutedData} isSubmit={isSubmit} codeInput={sampleInput} onDataChange={handleDataChange} changedData={ExecutedData}  onTextFieldChange={handleTextFieldChange}/>
                             //</div>
                         )}
       

@@ -19,6 +19,9 @@ body {
 
   .container {
     /* height: 1px; */
+    
+    border-left-width: 0px;
+
   }
   .outerbox {
     position: relative;
@@ -142,6 +145,7 @@ body {
     background-color:  #230b4e;
     color: #ffffff;
     transition: transform .2s;
+    border-radius: 2px;
     /* box-shadow: 20px 20px 30px rgb(0, 0, 0); */
   }
   

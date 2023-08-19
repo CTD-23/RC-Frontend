@@ -8,4 +8,12 @@
     justify-content: flex-end;
     position: fixed;
     box-shadow: 3px 3px 3px gray;
+    
 }
+
+@keyframes fadeInUp {
+    to {
+      /* opacity: 1; */
+      transform: scale(1);
+    }
+  }

@@ -5,7 +5,7 @@ import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
 
 
-const endPoint = "/api/result/"
+const endPoint = "/api/result/" 
 
 
 const Result = () => {
