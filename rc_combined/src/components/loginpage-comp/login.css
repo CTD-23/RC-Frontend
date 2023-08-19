@@ -4,7 +4,7 @@ html {
   body {
     margin: 0;
     padding: 0;
-    /*font-family: sans-serif;*/
+    /*font-family: sans-serif;*/ 
     background-image: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgba(127,58,180,1) 48%, rgba(9,8,74,1) 81%, rgba(5,5,36,1) 91%);
   }
   /* .navbar,
@@ -17,15 +17,16 @@ html {
   .login-box {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 35%;
     width: 350px;
     padding: 40px;
-    transform: translate(-50%, -50%);
+    /* rc */
     /* background-image: linear-gradient(201deg, #05494d -23%, #12100e 130%); */
-    background: linear-gradient(124deg, rgba(14,0,36,1) 7%, rgba(26,12,45,1) 30%, rgba(61,21,163,1) 52%, rgba(13,5,25,1) 88%);
+    background: linear-gradient(0deg,  rgba(26,12,45,1) 50%, rgba(61,21,163,1) 102% );
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
+    margin-top: 25px;
   }
   
   .login-box h2 {
@@ -73,7 +74,7 @@ html {
     position: relative;
     display: block;
     padding: 10px 20px;
-    color: rgba(122, 206, 86, 0.571);
+    color: rgba(17, 159, 247, 0.849);
     font-size: 16px;
     border: none;
     background-color: transparent;
@@ -82,12 +83,13 @@ html {
     overflow: hidden;
     transition: 0.5s;
     margin-top: 20px; 
-    letter-spacing: 4px;
+    letter-spacing: 1.5px;
     margin-left: 80px;
   }
   
   .login-btn:hover {
-    background: #0cd69c84;
+    /* background: #0cd69c84; */
+    background: rgba(17, 159, 247, 0.849);
     color: #fff;
     border-radius: 5px;
   }
@@ -102,7 +104,8 @@ html {
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(122, 206, 86, 0.911));
+    /* background: linear-gradient(90deg, transparent, rgba(122, 206, 86, 0.911)); */
+    background: rgba(17, 159, 247, 0.849);
     animation: btn-anim1 1s linear infinite;
   }
   
@@ -121,7 +124,8 @@ html {
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, rgba(122, 206, 86, 0.911));
+    /* background: linear-gradient(180deg, transparent, rgba(122, 206, 86, 0.911)); */
+    background: rgba(17, 159, 247, 0.849);
     animation: btn-anim2 1s linear infinite;
     animation-delay: 0.25s;
   }
@@ -141,7 +145,8 @@ html {
     right: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, rgba(122, 206, 86, 0.911));
+    /* background: linear-gradient(270deg, transparent, rgba(122, 206, 86, 0.911)); */
+    background: rgba(17, 159, 247, 0.849);
     animation: btn-anim3 1s linear infinite;
     animation-delay: 0.5s;
   }
@@ -161,7 +166,8 @@ html {
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, rgba(122, 206, 86, 0.911));
+    /* background: linear-gradient(360deg, transparent, rgba(122, 206, 86, 0.911)); */
+    background: rgba(17, 159, 247, 0.849);
     animation: btn-anim4 1s linear infinite;
     animation-delay: 0.75s;
   }
@@ -200,13 +206,14 @@ html {
     display: none;
   }
   .radio input#a-button + span:after {
-    border: rgba(122, 206, 86, 0.911) 2px solid;
+    border: rgba(178, 24, 198, 0.911) 2px solid;
   }
   .radio input#b-button + span:after {
-    border: rgba(122, 206, 86, 0.911) 2px solid;
+    border: rgba(178, 24, 198, 0.911) 2px solid;
   }
   .radio input#c-button + span:after {
-    border: rgba(122, 206, 86, 0.911) 2px solid;
+    /* border: rgba(122, 206, 86, 0.911) 2px solid; */
+    border: rgba(178, 24, 198, 0.911) 2px solid;
   }
   .radio input + span {
     line-height: 22px;
@@ -234,13 +241,16 @@ html {
       transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
   }
   .radio input + span#a-button:before {
-    background: rgba(122, 206, 86, 0.911);
+    background: rgba(178, 24, 198, 0.911) ;
+    
   }
   .radio input + span#b-button:before {
-    background: rgba(122, 206, 86, 0.911);
+    /* background: rgba(122, 206, 86, 0.911); */
+    background: rgba(178, 24, 198, 0.911) ;
   }
   .radio input + span#c-button:before {
-    background: rgba(122, 206, 86, 0.911);
+    /* background: rgba(122, 206, 86, 0.911); */
+    background: rgba(178, 24, 198, 0.911) ;
   }
   .radio input + span:after {
     background: #222;
@@ -256,17 +266,17 @@ html {
   }
   .radio input#a-button:checked + span:before {
     background: #222;
-    border: 2px solid rgba(122, 206, 86, 0.911);
+    border: 2px solid rgba(178, 24, 198, 0.911) ;
   }
   .radio input#a-button:checked + span:after {
-    background: rgba(122, 206, 86, 0.911);
+    background: rgba(178, 24, 198, 0.911) ;
   }
   .radio input#b-button:checked + span:before {
     background: #222;
-    border: 2px solid rgba(122, 206, 86, 0.911);
+    border: 2px solid rgba(178, 24, 198, 0.911) ;
   }
   .radio input#b-button:checked + span:after {
-    background: rgba(122, 206, 86, 0.911);
+    background: rgba(178, 24, 198, 0.911) ;
   }
   .radio:hover input + span:before {
     transform: scale(0.92);

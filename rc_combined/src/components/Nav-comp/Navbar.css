@@ -1,4 +1,8 @@
 .navbar{
+overflow-y: hidden;
+left: 0;
+bottom: 0;
+  width: 100%;
     color: #ffffff;
     height: 55px;
     background: rgb(14,0,36);

@@ -7,7 +7,7 @@ export default function Footer() {
     <div>
       <footer className="text-center footer">
         <div className="container-fluid">
-          <div className="footer-text ">PISB <span>&copy;</span></div>
+          <div className="footer-text ">PICT IEEE Student Branch <span>&copy;</span> 2023</div>
         </div>
       </footer>
     </div>

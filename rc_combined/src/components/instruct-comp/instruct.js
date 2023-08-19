@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import './instructs.css';
+
+import { Link } from 'react-router-dom'
+
+
 function Instruct() {
   const [termsChecked, setTermsChecked] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
-  const instructions = [
-    "The following coding competition can be played in three languages.",
-    "These rounds consist of 6 questions of increasing marks in order. For the first right submission, the first participant to submit will receive full marks. For the next right submissions, following participants will receive total-1, total-2, and so on marks.",
-    "The following contest will consist of two text boxes - a] Input textbox b] Output textbox. Participants are expected to put custom input in the textbox and the corresponding output will be generated.",
-    "Based on the output generated upon customized inputs provided, find the relation and code it accordingly in the editor provided on the page.",
-    "To run the code and check for semantics, press the run button.",
-    "To check Testcases passed and to do the submission of the code, press the Submit button.",
-    "Once pressed on the run button, you can authenticate the code in the custom input textbox and check the corresponding output to verify the validity of the code.",
-    "After every submission, the leaderboard will be updated. Users can check their rank on the leaderboard page.",
-    "Submissions done can be viewed on the submission page of the website."
+  const instructions = [ 
+    "This round comprises of 6 questions. All the questions have marking scheme +100 for correct answers.",
+    "Please play the game in Full Screen (Fn + F11) for better resolution."
   ];
 
   const handleTermsChange = () => {
     setTermsChecked(!termsChecked);
     setIsButtonEnabled(!isButtonEnabled);
+}
+
+const btnstyle = {
+  textDecoration: "none",
+  color: "#ffffff",
 }
 
 
@@ -64,8 +66,10 @@ function Instruct() {
                   id="submit_button"
                   name="submitbutton"
                   disabled={!isButtonEnabled} 
+                  onClick={() => localStorage.setItem("contractAccept", true)}
                 >
-                  Proceed
+                  <Link to="/question/" style={btnstyle}> Proceed</Link>
+                  
                 </button>
               </div>
             </form>

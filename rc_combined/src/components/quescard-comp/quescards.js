@@ -1,32 +1,56 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import './quescards.css'; // Import your custom CSS
-// import logo from './images/revb.png';
-// import pisbLogo from './images/pisblogo.png';
+import { Link } from 'react-router-dom'
+import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
+import { getToken} from '../../Utils/utils';
+
+const endPoint = "/api/questions/"
 
 const tasks = [
-  { id: 1, name: 'Reverse the String', progress: 25, link: 1 },
-  { id: 2, name: 'Determine the Score', progress: 50, link: 2 },
-  { id: 3, name: 'Add two numbers', progress: 75, link: 3 },
-  { id: 4, name: 'Sorting an Array', progress: 100, link: 4 },
-  { id: 5, name: 'Find the factorial', progress: 67.7, link: 5 },
-  { id: 6, name: 'Is the number Palindrome', progress: 33.3, link: 6 },
+  
 ];
 
 function App() {
-  const rows = tasks.map(task => (
-    <div className="card" key={task.id}>
-      <p className="thwala">{task.id}. {task.name}</p>
+const [Qdata, setQdata] = useState(tasks);
+  useEffect(()=>{
+    addAuthToken(getToken());
+    AxiosInstance.get(endPoint)
+            .then((response) => {
+                console.log("enter in then ");
+                if (response.status) {
+                    console.log("enter in then if ");
+                    console.log(response.data);
+                    setQdata(response.data)
+
+                }
+                else {
+                    
+                    console.log("Error In fetch");
+                }
+            })
+            .catch((error) => {
+                
+                console.log("enter in error ",error);
+
+            })
+  },[]);
+
+
+
+  const rows = Qdata.map(task => (
+    <div className="card" key={task.questionId}>
+      <p className="thwala"> {task.title}</p>
       <div className="thwala" id="progress">
         <div className="progress" style={{ height: '25px' }}>
           <div
             className="progress-bar"
             role="progressbar"
-            style={{ width: `${task.progress}%` }}
-            aria-valuenow={task.progress}
+            style={{ width: `${task.accuracy}%` }}
+            aria-valuenow={task.accuracy}
             aria-valuemin="0"
             aria-valuemax="100"
           >
-            {task.progress}%
+            {task.accuracy}%
           </div>
         </div>
       </div>
@@ -37,11 +61,15 @@ function App() {
           data-bs-toggle="modal"
           data-bs-target="#myModal"
         >
-          <a href={task.link}>SOLVE</a>
+          {/* <a href={task.questionId}>SOLVE</a> */}
+          <Link to={`/question/${task.questionId}`}>SOLVE</Link>
         </button>
       </div>
     </div>
   ));
+
+
+  
 
   return (
     <>

@@ -1,23 +1,83 @@
+import React from 'react'
 import "./result.css";
+import { useEffect,useState } from "react";
+import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
+import { getToken} from '../../Utils/utils';
 
-const result = () => {
+
+const endPoint = "/api/result/"
+
+
+const Result = () => {
+  const [Resultdata,setResultData] = useState();
+  const [top6,setTop6] = useState([]);  
+
+  
+
+  useEffect(()=>{
+    addAuthToken(getToken());
+    AxiosInstance.get(endPoint)
+            .then((response) => {
+                console.log("enter in then ");
+                if (response.status) {
+                    console.log("enter in then if ");
+                    // console.log(response.data);
+                    var personalR = response.data.personalRank;
+                    var top6R = response.data.top6;
+                    setResultData(Resultdata => ({
+                      ...Resultdata,
+                      ...personalR
+                    }));
+                    setTop6(top6 => ({
+                      ...top6,
+                      ...top6R
+                    }));
+                    
+
+
+                }
+                else {
+                    
+                    console.log("Error In fetch");
+                }
+            })
+            .catch((error) => {
+                
+                console.log("enter in error ",error);
+
+            })
+  },[]);
+
+
+  const getFormatedTime = (timestamp) => {
+    const date = new Date(timestamp);
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+    
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+    
+    return formattedTime // Display formatted time in h:mm:ss format
+  }
+
+
   return ( 
     <>
-       <div class="contain">
-       <div class="result">
-        <h1 class="resulttitle">Your Results</h1>
-          <div class="user_profile">
-              <div class="profile">
-                <div class="profilepic">
+       <div className="contain">
+       <div className="result">
+        <h1 className="resulttitle">Your Results</h1>
+          <div className="user_profile">
+              <div className="profile">
+                <div className="profilepic">
                   A
                 </div>
-                <p class="name">Name</p>
+                <p className="name">{Resultdata?.user1}</p>
               </div>
 
-              <div class="score">
-                {/* <!-- <p class="scoreitem">Rank : 5</p>
-                <p class="scoreitem">Score: 10/10</p> --> */}
-                <table class="tbles">
+              <div className="score">
+                {/* <!-- <p className="scoreitem">Rank : 5</p>
+                <p className="scoreitem">Score: 10/10</p> --> */}
+                <table className="tbles">
                   <thead>
                     <th>
                       Rank
@@ -29,15 +89,15 @@ const result = () => {
                   <tbody>
                     <tr>
                       <td>
-                        5
+                        {Resultdata?.rank}
                       </td>
                       <td>
-                        10/10
+                      {Resultdata?.score}
                       </td>
                     </tr>
                   </tbody>
                 </table>
-                <table class="tbles">
+                <table className="tbles">
                   <thead>
                     <th>
                       Questions 
@@ -59,89 +119,88 @@ const result = () => {
                     </tr>
                   </tbody>
                 </table>
-                {/* <!-- <p class="scoreitem">Questions Attempted: 7</p>
-                <p class="scoreitem">Questions Asked: 7</p> --> */}
+                {/* <!-- <p className="scoreitem">Questions Attempted: 7</p>
+                <p className="scoreitem">Questions Asked: 7</p> --> */}
               </div>
           </div>
-          {/* <!-- <div class="statistics">
+          {/* <!-- <div className="statistics">
                      
           </div>   --> */}
        </div>
-       <div class="leaderboard">
+       <div className="leaderboard">
 
-             <div class="leaderhead">
+             <div className="leaderhead">
               <h1>WINNERS</h1>
              </div>       
-             <div class="top3">
-                  <div class="card1" id="card1">
-                    <div class="circle">
-                       <h2 class="place">2 </h2>
+             <div className="top3">
+                  <div className="card1" id="card1">
+                    <div className="circle">
+                       <h2 className="place">2 </h2>
                     </div>
-                    <div class="content">
+                    <div className="content">
                       
                       <p>2nd</p>
-                      <p>Alice</p>
-                      <p>Score: 99/100</p>
+                      <p>{top6?.[1]?.user1}</p>
+                      <p>Score: {top6?.[1]?.score}</p> 
                     </div>
                   </div>
 
-                  <div class="card1" id="card2">
-                    <div class="circle">
+                  <div className="card1" id="card2">
+                    <div className="circle">
                       
-                        <h2 class="place">1</h2>
+                        <h2 className="place">1</h2>
                     </div>
-                    <div class="content">
+                    <div className="content">
                        <p>1st</p>
-                       <p>Alice</p>
-                       <p>Score: 100/100</p>
+                       <p>{top6?.[0]?.user1}</p>
+                       <p>Score: {top6?.[0]?.score}</p>
                     </div>
                   </div>
 
-                  <div class="card1" id="card3">
-                    <div class="circle">
-                        <h2 class="place">3</h2>
+                  <div className="card1" id="card3">
+                    <div className="circle">
+                        <h2 className="place">3</h2>
                     </div>
-                    <div class="content">
+                    <div className="content">
                       <p>3rd</p>
-                      <p>Alice</p>
-                      <p>Score: 98/100</p>
+                      <p>{top6?.[2]?.user1}</p>
+                      <p>Score: {top6?.[2]?.score}</p>
                     </div>
                   </div>
              </div>
-             <div class="top6">
-                <div class="tble">
-                    <table class="leader-table table table-hover" id="myTable" bgcolor = "#2E363B">
+             <div className="top6">
+                <div className="tble">
+                    <table className="leader-table table table-hover" id="myTable" bgcolor = "#2E363B">
                       <thead>
-                        <tr class="headers" bgcolor="#13303E">
-                          <th scope="col" class="userb">Rank</th>
-                          <th scope="col" class="userb">Name</th>
-                          <th scope="col" class="userb">Score</th>
-                          <th scope="col" class="userb">Attempts</th>
-                          <th scope="col" class="userb">Time</th>
+                        <tr className="headers" bgcolor="#13303E">
+                          <th scope="col" className="userb">Rank</th>
+                          <th scope="col" className="userb">Name</th>
+                          <th scope="col" className="userb">Score</th>
+                          {/* <th scope="col" className="userb">Attempts</th> */}
+                          <th scope="col" className="userb">Time</th>
                         </tr>
                       </thead>
                       <tbody id="myTable">
-                        <tr class="usera">
-                          <td>4th</td>
-                          <td>Ted</td>
-                          <td>85</td>
-                          <td>9/10</td>
-                          <td>0:18:00</td>  
-                        </tr>        
-                        <tr class="usera">
-                          <td>5th</td>
-                          <td>Michael</td>
-                          <td>81</td>
-                          <td>9/10</td>
-                          <td>0:20:00</td>          
+                      
+                        <tr className="usera" >
+                          <td>{top6?.[3]?.rank}</td>
+                          <td>{top6?.[3]?.user1}</td>
+                          <td>{top6?.[3]?.score}</td>
+                          <td>{getFormatedTime(top6?.[3]?.lastUpdate)}</td>
                         </tr>
-                        <tr class="usera">
-                          <td>6th</td>
-                          <td>Joey</td>
-                          <td>79</td>
-                          <td>9/10</td>
-                          <td>0:20:50</td>          
+                        <tr className="usera" >
+                          <td>{top6?.[4]?.rank}</td>
+                          <td>{top6?.[4]?.user1}</td>
+                          <td>{top6?.[4]?.score}</td>
+                          <td>{getFormatedTime(top6?.[4]?.lastUpdate)}</td>
                         </tr>
+                        <tr className="usera" >
+                          <td>{top6?.[5]?.rank}</td>
+                          <td>{top6?.[5]?.user1}</td>
+                          <td>{top6?.[5]?.score}</td>
+                          <td>{getFormatedTime(top6?.[5]?.lastUpdate)}</td>
+                        </tr>
+                     
                        </tbody>
                     </table>
                 </div>
@@ -152,4 +211,4 @@ const result = () => {
    );
 }
  
-export default result;
+export default Result;
